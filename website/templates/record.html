@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="card">
+		<!-- font : IndianRed -->
+		<div class="card-header">
+			<font color="#CD5C5C"><strong>
+				{{ customer_record.first_name }} 
+				{{ customer_record.last_name }}
+			</strong></font>
+		</div>
+		
+		<!-- font : MediumSlateBlue -->
+		<div class="card-body">
+			<p class="card-text">
+				<font color="#7B68EE"><strong>Email : </strong></font>{{ customer_record.email }}</br>
+			</p>
+
+			<p class="card-text">
+				<font color="#7B68EE"><strong>Address : </strong></font>{{ customer_record.address }}</br>
+			</p>
+
+			<p class="card-text">
+				<font color="#7B68EE"><strong>City : </strong></font>{{ customer_record.city }}</br>
+			</p>
+
+			<p class="card-text">
+				<font color="#7B68EE"><strong>State : </strong></font>{{ customer_record.state }}</br>
+			</p>
+
+			<p class="card-text">
+				<font color="#7B68EE"><strong>ZipCode : </strong></font>{{ customer_record.zipcode }}</br>
+			</p>
+			
+			<p class="card-text">
+				<font color="#7B68EE"><strong>Created Date : </strong></font>{{ customer_record.created_at }}</br>
+			</p>		
+		</div>
+	</div>
+
+	</br></br>
+
+	<a href="{% url 'home' %}" class="btn btn-secondary" style="background-color:LightSteelBlue;">Back</a>
+
+	<a href="{% url 'delete_customer' customer_record.id %}" class="btn btn-secondary" style="background-color:Tomato;">Delete</a>
+	
+	<a href="{% url 'update_customer' customer_record.id %}" class="btn btn-secondary" style="background-color:LightSteelBlue;">Update Record</a>
+
+{% endblock %}

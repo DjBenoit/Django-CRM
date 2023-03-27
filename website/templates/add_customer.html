@@ -3,10 +3,11 @@
 {% block content %}
 
 <div class="col-md-6 offset-md-3">
-	<h1>Register</h1></br>
+	<h1>Add Record</h1></br>
 
-	<form method="POST" action="">
-		{% csrf_token %}
+	<form method="POST" action="{% url 'add_customer' %}">
+		{% csrf_token  %}
+
 		{% if form.errors %}
 			<div class="alert alert-warning alert-dismissible fade show" role="alert">
 			  Your Form Has Errors
@@ -21,8 +22,11 @@
 
 		{{ form.as_p }}
 
-		</br>
-		<button type="submit" class="btn btn-secondary">Register</button>
+		<a href="{% url 'home' %}" class="btn btn-secondary" style="background-color:LightSteelBlue;">Back</a>
+		
+		<button type="submit" class="btn btn-secondary">Save Record</button>
 	</form>
 </div>
+
+
 {% endblock %}
